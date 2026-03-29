@@ -122,3 +122,61 @@ El footer:
 - Resumen breve
 - Archivos con el código completo listo para copiar bajo una carpeta stopwatch-XVB
 - No incluyas archivos de referencia sobre los que te hayas basado para el diseño
+
+
+
+# Prompt 2 — Funcionalidad de Stopwatch
+
+Implementa un temporizador/cronómetro progresivo sobre la vista Stopwatch
+
+## Contexto de la funcionalidad
+- Utiliza los estilos y fuentes del proyecto ya existentes.
+- La vista stopwatch debe respetar el diseño y estructura que te proporciona la imagen https://github.com/xavierventeo/AI4Devs-stopwatch-2603-Sr_II/blob/main/res/stopwatch.png
+
+## Requisito funcionales página stopwatch.html:
+- Sobre la estructura de página existente debes desarrollar un cronómetro en vista Stopwatch ya existente dentro de la **zona central dinámica** 
+- La estructura de la pantalla debe ser:
+  - Un display principal
+    - En formato HH:MM:SS con tipo de letra grande con valor inicial "00:00:00"
+    - Un indicador secundario de milisegundos debajo con tipo de letra más pequeño y alineados a la derecha con valor inicial "000"
+  - Gnera dos botones de acción centrados debajo del display:  
+    - Un botón de acción principal a la izquierda
+    - Un botón de limpieza a la derecha
+- El botón de acción principal puede variar de estado:
+    - Start
+      - Estado inicial
+      - Color background primario
+      - Inicia el cronómetro que se visualiza en el display principal
+    - Pause
+      - Pause se activa una vez se pulsa a Start
+      - Color background secundario
+      - Para el cronómetro
+    - Continue
+      - Continue se activa una ves se pulsa a Pause
+      - Mismo color background que Start
+      - Continua el cronómetro
+- El botón de limpieza debe cumplir:
+  - Copy Clear
+  - Color background de stop
+  - Para el cronómetro si estaba corriendo
+  - Pone el display del cronómetro a 0
+    - El tiempo a 00:00:00
+    - La fracción a 000
+  - Cambia el btoón de acción principal a estado Start
+
+## Restricciones
+- No modifiuqes ni el header ni el footer
+- No modifiques nada que no tenga que ver con la sección Stopwatchs
+- Modifica sólo el contenido de la sección StopWatch y añade sólo estilos y javascript para la apariencia y lógica de esa sección
+
+## Requisitos UX/UI
+- Estética de cronómetro digital
+- El cronómetro debe actualizarse de forma fluida y precisa.
+- El estado visual debe reflejar si está corriendo o pausado.
+
+
+## Entregables:
+- Explica los cambios aplicados en el código
+- Muestra los cambios de la mejora que has aplicado
+- Archivos con el código completo listo para copiar bajo una carpeta stopwatch-XVB
+- Genera sólo los ficheros que hayan tenido cambios y deben contener el código original y los cambios de la mejora que has aplicado

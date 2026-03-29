@@ -42,10 +42,30 @@
             </section>
 
             <section class="view" data-view="stopwatch" aria-label="Stopwatch view">
-              <div class="panel panel--single">
-                <div class="panel__content">
-                  <p class="panel__eyebrow">Stopwatch</p>
-                  <h2 class="panel__title">Stopwatch WIP</h2>
+              <div class="panel panel--single stopwatch-panel">
+                <div class="stopwatch">
+                  <div class="stopwatch__display" aria-live="off">
+                    <div class="stopwatch__time" data-stopwatch-time>00:00:00</div>
+                    <div class="stopwatch__milliseconds" data-stopwatch-milliseconds>000</div>
+                  </div>
+
+                  <div class="stopwatch__actions">
+                    <button
+                      class="stopwatch__button stopwatch__button--primary"
+                      type="button"
+                      data-stopwatch-toggle
+                      data-state="idle"
+                    >
+                      Start
+                    </button>
+                    <button
+                      class="stopwatch__button stopwatch__button--clear"
+                      type="button"
+                      data-stopwatch-clear
+                    >
+                      Clear
+                    </button>
+                  </div>
                 </div>
               </div>
             </section>
