@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Stopwatch</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <h1 class="app-title">Online Stopwatch</h1>
+      </header>
+
+      <main class="app-main">
+        <section class="view-window" aria-live="polite">
+          <div class="view-track" data-view-track>
+            <section class="view" data-view="countdown" aria-label="Countdown view">
+              <div class="panel panel--single">
+                <div class="panel__content">
+                  <p class="panel__eyebrow">Countdown</p>
+                  <h2 class="panel__title">Countdown WIP</h2>
+                </div>
+              </div>
+            </section>
+
+            <section class="view" data-view="selection" aria-label="Mode selection view">
+              <div class="selection-grid">
+                <button class="mode-card" type="button" data-target-view="stopwatch" aria-label="Open stopwatch view">
+                  <span class="mode-card__icon mode-card__icon--up" aria-hidden="true">↑</span>
+                  <span class="mode-card__title">Stopwatch</span>
+                  <span class="mode-card__description">Track elapsed time with a clean digital display.</span>
+                </button>
+
+                <button class="mode-card" type="button" data-target-view="countdown" aria-label="Open countdown view">
+                  <span class="mode-card__icon mode-card__icon--down" aria-hidden="true">↓</span>
+                  <span class="mode-card__title">Countdown</span>
+                  <span class="mode-card__description">Prepare a reverse timer for focused sessions.</span>
+                </button>
+              </div>
+            </section>
+
+            <section class="view" data-view="stopwatch" aria-label="Stopwatch view">
+              <div class="panel panel--single">
+                <div class="panel__content">
+                  <p class="panel__eyebrow">Stopwatch</p>
+                  <h2 class="panel__title">Stopwatch WIP</h2>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-footer">
+        <button class="back-button" type="button" data-back-button hidden>
+          Back
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>
