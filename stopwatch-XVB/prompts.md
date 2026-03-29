@@ -130,7 +130,7 @@ Implementa un temporizador/cronómetro progresivo sobre la vista Stopwatch
 - Utiliza los estilos y fuentes del proyecto ya existentes.
 - La vista Stopwatch debe respetar el diseño y la estructura que te proporciona la imagen https://github.com/xavierventeo/AI4Devs-stopwatch-2603-Sr_II/blob/main/res/stopwatch.png
 
-### Requisitos funcionales de la página stopwatch.html:
+### Requisitos funcionales de la sección stopwatch:
 - Sobre la estructura de página existente debes desarrollar un cronómetro en la vista Stopwatch ya existente dentro de la **zona central dinámica**
 - La estructura de la pantalla debe ser:
   - Un display principal
