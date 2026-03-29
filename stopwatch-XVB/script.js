@@ -255,6 +255,20 @@ function prepareCountdownMode(totalMilliseconds) {
   renderToggleButton();
 }
 
+function cancelCountdownSession() {
+  cancelTimerAnimation();
+  clearFinishedState();
+  timer.mode = TIMER_MODE.STOPWATCH;
+  timer.phase = TIMER_PHASE.IDLE;
+  timer.currentMs = 0;
+  timer.anchorMs = 0;
+  timer.startTimestamp = 0;
+  timer.initialCountdownMs = DEFAULT_COUNTDOWN_MS;
+  resetCountdownInput();
+  renderStopwatchDisplay();
+  renderToggleButton();
+}
+
 function resetStopwatch() {
   if (timer.mode === TIMER_MODE.COUNTDOWN) {
     cancelTimerAnimation();
@@ -331,6 +345,10 @@ modeButtons.forEach((button) => {
 });
 
 backButton.addEventListener("click", () => {
+  if (timer.mode === TIMER_MODE.COUNTDOWN) {
+    cancelCountdownSession();
+  }
+
   goToView(DEFAULT_VIEW);
 });
 

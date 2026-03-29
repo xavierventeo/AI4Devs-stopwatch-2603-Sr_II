@@ -261,3 +261,41 @@ Implementa un temporizador regresivo sobre la vista Countdown
 - Muestra los cambios de la mejora que has aplicado
 - Archivos con el código completo listo para copiar bajo una carpeta stopwatch-XVB
 - Genera sólo los ficheros que hayan tenido cambios y deben contener el código original y los cambios de la mejora que has aplicado
+
+
+# Prompt 4 — Fix la cuenta atrás continua en background
+
+## Problema detectado
+Si el usuario inicia una cuenta atrás y pulsa **Back** antes de que termine, la cuenta atrás sigue ejecutándose en segundo plano y al llegar a cero suena la alarma.
+
+Eso no debe ocurrir.
+
+## Objetivo
+Al pulsar **Back** y salir de la pantalla de countdown:
+- la cuenta atrás debe pararse
+- debe cancelarse cualquier timer o intervalo activo
+- no debe sonar ninguna alarma
+- no debe mantenerse la ejecución en background
+
+## Requisitos
+- Implementa la lógica necesaria para que el botón **Back** también cancele la cuenta atrás activa
+- Si el usuario abandona la pantalla, la cuenta atrás debe considerarse cancelada, no pausada
+- Si vuelve más tarde a countdown, no debe arrastrarse el estado anterior
+
+## Restricciones
+- No cambies el diseño general de la aplicación
+- No modifiques header ni footer
+- Haz sólo los cambios necesarios para corregir este comportamiento
+
+## Criterios de aceptación
+- Inicio una cuenta atrás
+- Pulso **Back** antes de que termine
+- La cuenta atrás se detiene por completo
+- No suena ninguna alarma después
+- Si vuelvo a entrar, no queda estado anterior activo
+
+## Entregables:
+- Explica los cambios aplicados en el código
+- Muestra los cambios de la mejora que has aplicado
+- Archivos con el código completo listo para copiar bajo una carpeta stopwatch-XVB
+- Genera sólo los ficheros que hayan tenido cambios y deben contener el código original y los cambios de la mejora que has aplicado
