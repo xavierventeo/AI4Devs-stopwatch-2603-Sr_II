@@ -1,6 +1,6 @@
 # Código generado con ChatGPT Thinking
 
-## Prompt 1: Creación de la página principal con enlaces a páginas con stopwatch.html y countdown.html con un HTML vacío
+## Prompt 1: Creación de la página principal con enlaces a secciones stopwatch y countdown con un HTML vacío
 
 ### Rol
 Actúa como un desarrollador frontend senior especializado en HTML, CSS y JavaScript.
