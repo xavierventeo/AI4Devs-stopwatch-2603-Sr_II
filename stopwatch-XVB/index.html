@@ -17,10 +17,44 @@
         <section class="view-window" aria-live="polite">
           <div class="view-track" data-view-track>
             <section class="view" data-view="countdown" aria-label="Countdown view">
-              <div class="panel panel--single">
-                <div class="panel__content">
-                  <p class="panel__eyebrow">Countdown</p>
-                  <h2 class="panel__title">Countdown WIP</h2>
+              <div class="panel panel--single stopwatch-panel">
+                <div class="countdown">
+                  <div class="countdown__display" aria-live="off" data-countdown-display>
+                    <div class="countdown__time" data-countdown-time>00:00:00</div>
+                    <div class="countdown__milliseconds" data-countdown-milliseconds>000</div>
+                  </div>
+
+                  <div class="countdown__keypad" aria-label="Countdown keypad">
+                    <div class="countdown__row">
+                      <button class="countdown__button" type="button" data-countdown-digit="0">0</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="1">1</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="2">2</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="3">3</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="4">4</button>
+                      <button
+                        class="countdown__button countdown__button--wide countdown__button--set"
+                        type="button"
+                        data-countdown-set
+                      >
+                        Set
+                      </button>
+                    </div>
+
+                    <div class="countdown__row">
+                      <button class="countdown__button" type="button" data-countdown-digit="5">5</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="6">6</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="7">7</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="8">8</button>
+                      <button class="countdown__button" type="button" data-countdown-digit="9">9</button>
+                      <button
+                        class="countdown__button countdown__button--wide countdown__button--clear"
+                        type="button"
+                        data-countdown-clear
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </section>
@@ -44,12 +78,12 @@
             <section class="view" data-view="stopwatch" aria-label="Stopwatch view">
               <div class="panel panel--single stopwatch-panel">
                 <div class="stopwatch">
-                  <div class="stopwatch__display" aria-live="off">
+                  <div class="stopwatch__display" aria-live="off" data-stopwatch-display>
                     <div class="stopwatch__time" data-stopwatch-time>00:00:00</div>
                     <div class="stopwatch__milliseconds" data-stopwatch-milliseconds>000</div>
                   </div>
 
-                  <div class="stopwatch__actions">
+                  <div class="stopwatch__actions" data-stopwatch-actions>
                     <button
                       class="stopwatch__button stopwatch__button--primary"
                       type="button"

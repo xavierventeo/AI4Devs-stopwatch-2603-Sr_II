@@ -139,7 +139,7 @@ Implementa un temporizador/cronómetro progresivo sobre la vista Stopwatch
   - Un display principal
     - En formato HH:MM:SS con tipo de letra grande con valor inicial "00:00:00"
     - Un indicador secundario de milisegundos debajo con tipo de letra más pequeño y alineados a la derecha con valor inicial "000"
-  - Gnera dos botones de acción centrados debajo del display:  
+  - Genera dos botones de acción centrados debajo del display:  
     - Un botón de acción principal a la izquierda
     - Un botón de limpieza a la derecha
 - El botón de acción principal puede variar de estado:
@@ -174,6 +174,87 @@ Implementa un temporizador/cronómetro progresivo sobre la vista Stopwatch
 - El cronómetro debe actualizarse de forma fluida y precisa.
 - El estado visual debe reflejar si está corriendo o pausado.
 
+
+## Entregables:
+- Explica los cambios aplicados en el código
+- Muestra los cambios de la mejora que has aplicado
+- Archivos con el código completo listo para copiar bajo una carpeta stopwatch-XVB
+- Genera sólo los ficheros que hayan tenido cambios y deben contener el código original y los cambios de la mejora que has aplicado
+
+
+# Prompt 3 — Funcionalidad de Countdown
+
+Implementa un temporizador regresivo sobre la vista Countdown
+
+## Contexto de la funcionalidad
+- Utiliza los estilos, fuentes y estructura del proyecto ya existentes.
+- La vista Countdown debe respetar el diseño y composición visual del modo Countdown de https://www.online-stopwatch.com/ tal y como se aprecia en la captura proporcionada.
+- Reutiliza la base de lógica temporal, formateo, renderizado y actualización del contador que ya implementaste en el la vista Stopwatch, adaptándola a una lógica regresiva.
+- No crees una nueva arquitectura ni una nueva pantalla fuera de la vista Countdown ya existente dentro de la aplicación.
+
+## Requisito funcionales página Countdown:
+- Sobre la estructura de página existente debes desarrollar un contador regresivo en la vista Countdown ya existente dentro de la **zona central dinámica**
+- La estructura de la pantalla debe ser:
+  - Un display principal
+    - Reutiliza el componente visual ya existente en la sección Stopwatch
+  - Una botonera numérica debajo del display para introducir el tiempo del countdown
+    - Dos filas
+    - Primera fila: `0`, `1`, `2`, `3`, `4` y botón `Set`
+    - Segunda fila: `5`, `6`, `7`, `8`, `9` y botón `Clear`
+    - Los botones numéricos deben tener el mismo peso visual entre sí
+    - Los botones `Set` y `Clear` deben ocupar más ancho que un botón numérico estándar
+    - Los botones numéricos estándar y el botón `Set` deben tener el mismo color background
+    - El color background del botón `Clear` de la sección Countdown debe ser de stop. Utiliza el mismo color background del botón `Clear` de la sección Stopwatch
+
+## Comportamiento de introducción del tiempo
+- El usuario debe poder construir el tiempo objetivo pulsando los botones numéricos
+- La entrada debe funcionar como una inserción secuencial de 6 dígitos sobre el formato `HHMMSS`
+- Cada pulsación desplaza a la izquierda los dígitos anteriores y añade el nuevo dígito al final
+- Ejemplo:
+  - estado inicial `00:00:00`
+  - si el usuario pulsa `1` → `00:00:01`
+  - si después pulsa `2` → `00:00:12`
+  - si después pulsa `3` → `00:01:23`
+  - si después pulsa `4` → `00:12:34`
+- El sistema debe limitar la entrada a 6 dígitos efectivos
+- Si se supera ese límite, debe mantenerse una lógica consistente de desplazamiento, conservando siempre los últimos 6 dígitos
+- El campo de milisegundos no se introduce manualmente: siempre empieza en `000`
+
+## Comportamiento del botón Set
+  - Si hay un tiempo válido mayor que cero muestra sin transición la sección `Stopwatch` con el tiempo indicado
+  - Si marca 0 muestra sin transición la sección `Stopwatch` con el tiempo por defecto 10 segundos.
+
+## Comportamiento de la cuenta atrás
+- Siempre que se llegue a la sección `Countdown` desde la sección `Selección de modo`, el tiempo en el display será 0: `00:00:00` y `000`
+- Siempre que se llegue a la sección `Countdown` desde la sección `Stopwatch` el contador no arrancará hasta que se pulse el botón de acción principal en estado Start 
+- La cuenta debe descender desde el tiempo configurado hasta `00:00:00.000`
+- El contador debe actualizarse de forma fluida y precisa
+- Debe utilizar una lógica robusta basada en tiempo real transcurrido y no en decrementos ingenuos fijos, para evitar deriva
+- Al llegar a cero:
+  - el contador debe detenerse automáticamente
+  - no debe mostrar valores negativos
+  - el display debe quedar exactamente en `00:00:00` y `000`
+  - Debe activarse un estado de fin de cuenta atrás claramente perceptible, con impacto visual en el display y sonoro inmediato similar a una alarma 
+  - El botón de acción principal de la sección Stopwatch (Start, Pause, Continue) se debe ocultar y el botón Clear estar alineado a la derecha con el display. Tras esta situación:
+    - Si se pulsa el botón Clear, se vuelve a mostrar el botón de acción principal y el display debe comportarse como un reset y mostrar el tiempo inicial indicado en la sección `Countdown`
+
+## Comportamiento del botón Clear
+  - Pone el display del cronómetro a 0
+    - El tiempo a 00:00:00
+    - La fracción a 000
+
+## Refactor sección Stopwatch
+- Debes adaptar la lógica de la sección `Stopwatch` para qué:
+  - Si se muestra desde la sección **Selección de modo** siga comportandose como un temporizador progresivo, tal y como está implementada
+  - Si se muestra desde la sección **Countdown** se comporte como un temporizador regresivo.
+
+## Requisitos UX/UI
+- Mantén la estética visual del proyecto
+- El cronómetro debe actualizarse de forma fluida y precisa.
+- Asegurate que no haya conflictos en la aplicación de estilos y que el aspecto visual cumpla con los requisitos que te especifico.
+
+## Restricciones
+- No modifiques ni el header ni el footer
 
 ## Entregables:
 - Explica los cambios aplicados en el código
